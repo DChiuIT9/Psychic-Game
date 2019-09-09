@@ -12,14 +12,6 @@
 
 <body>
     <h1>The Psychic Game</h1>
-    <br/>
-    Wins:
-    <br/>
-    Losses:
-    <br/>
-    Guesses Left:
-    <br/>
-    Your Guesses so far:
 
     <div>
         <p id="wins-text">Wins:</p>
@@ -28,45 +20,8 @@
         <p id="urguesses-text">Your guesses so far:</p>
     </div>
 
-    <script type="text/javascript">
-    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    <script type="text/javascript" src="assets/javascript/game.js">
 
-    var wins = 0;
-    var losses = 0;
-    var guessesLeft = 9;
-    var urGuesses = 0;
-
-    var winsText = document.getElementById("wins-text");
-    var lossesText = document.getElementById("losses-text");
-    var guessesLeftText = document.getElementById("guessesleft-text");
-    var urGuessesText = document.getElementById("urguesses-text");
-
-    document.onkeyup = function(event) {
-
-    var userGuess = event.key.toLowerCase();
-
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    console.log(computerGuess);
-    
-    if (userGuess === computerGuess) {
-          wins++;
-          guessesLeft = 9;
-          urGuesses = 0;
-        }
-        else if (userGuess !== computerGuess) {
-            guessesLeft--
-            urGuesses++
-            if (guessesLeft == 0) {
-                losses++;
-                guessesLeft = 9;
-                urGuesses = 0;
-            }
-        }
-        winsText.textContent = "Wins: " + wins;
-        lossesText.textContent = "Losses: " + losses;
-        guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
-        urGuessesText.textContent = "Your guesses so far: " + urGuesses;
-    };
     </script>
 </body>
 </html>
